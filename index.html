@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haske — Équipe de soutien scolaire à Niamey</title>
+<meta name="description" content="Haske sélectionne des étudiants pour accompagner les élèves à domicile, avec un suivi transparent pour les familles. Écrivez-nous pour inscrire votre enfant ou devenir collaborateur.">
+<meta name="theme-color" content="#0F6E56">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+/* Si logo.png est absent, un logo de secours (redessiné) s'affiche à sa place */
+const LOGO_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#FAF3E7"/><circle cx="200" cy="190" r="130" fill="#E8701A"/><circle cx="200" cy="190" r="95" fill="#F5A623"/><path d="M185 290l-5 50h15l5-40 5 40h15l-5-50z" fill="#1A1A18"/><ellipse cx="200" cy="255" rx="22" ry="38" fill="#1A1A18"/><circle cx="200" cy="205" r="16" fill="#1A1A18"/><path d="M183 230Q165 210 158 175M217 230Q235 205 242 165" stroke="#1A1A18" stroke-width="11" fill="none" stroke-linecap="round"/><rect x="238" y="120" width="8" height="48" rx="3" fill="#1A1A18" transform="rotate(8 242 144)"/><path d="M245 95C245 95 232 112 232 126c0 12 6 20 15 20s15-8 15-20c0-14-13-31-17-31z" fill="#0F6E56"/><path d="M60 320v-30q0-8 10-10l125 15v35L70 318q-10-1-10 2zM340 320v-30q0-8-10-10l-125 15v35l125-12q10-1 10 2z" fill="#fff" stroke="#0F6E56" stroke-width="3"/><path d="M40 345Q120 325 200 345T360 345" stroke="#0F6E56" stroke-width="6" fill="none" stroke-linecap="round"/></svg>';
+function logoFallback(img){ img.onerror = null; img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(LOGO_SVG); }
+</script>
+<style>
+:root{--green:#0F6E56;--green-d:#0A5242;--green-l:#E1F5EE;--amber:#EF9F27;--amber-l:#FBEBCF;--cream:#FAF3E7;--ink:#1A1A18;--muted:#5C5B55;--line:#DDD5C4;--dark:#16221F}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);color:var(--green-d);margin-bottom:.6rem}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:2.2rem}
+.tint{background:var(--cream)}
+
+header{position:sticky;top:0;z-index:10;background:rgba(250,243,231,.97);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:1.4rem;min-height:4.2rem}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:'Fraunces',serif;font-weight:700;font-size:1.45rem;color:var(--green-d)}
+.brand img{width:44px;height:44px;border-radius:10px}
+nav{display:flex;gap:1.4rem;margin-left:auto;font-size:.95rem;align-items:center}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--green-d)}
+.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:1rem;cursor:pointer;font-family:inherit}
+.btn-amber{background:var(--amber);color:var(--ink)}.btn-amber:hover{background:#F5B04A}
+.btn-line{border-color:#fff;color:#fff;background:transparent}.btn-line:hover{background:rgba(255,255,255,.14)}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-d)}
+.btn-outline{border-color:var(--green);color:var(--green-d);background:transparent}.btn-outline:hover{background:var(--green-l)}
+.btn-sm{padding:.55rem 1.2rem;font-size:.92rem}
+
+.hero{background:var(--green);color:#fff;position:relative;overflow:hidden;padding:5.5rem 0 6rem}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%}
+.hero::before{width:640px;height:640px;background:#E8701A;right:-120px;bottom:-260px}
+.hero::after{width:470px;height:470px;background:var(--amber);right:-35px;bottom:-190px}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(2.2rem,6vw,3.7rem);max-width:15ch}
+.hero p{max-width:46ch;margin:1.3rem 0 2rem;font-size:1.15rem;color:#E5F3EE}
+.hero .actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.checks{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:2.2rem;list-style:none;font-size:.98rem}
+.checks li::before{content:"\2713";color:var(--amber);font-weight:700;margin-right:.45rem}
+
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.svc{background:#fff;border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:12px;padding:1.5rem}
+.svc h3{font-size:1.15rem;margin-bottom:.5rem;color:var(--green-d)}
+.svc p{color:var(--muted);font-size:.97rem}
+
+.cols,.subjects{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.cols h3{font-size:1.35rem;margin-bottom:1rem}
+ol.steps{list-style:none;counter-reset:s;border-left:3px solid var(--amber);padding-left:1.4rem}
+ol.steps li{counter-increment:s;position:relative;margin-bottom:1.1rem}
+ol.steps li::before{content:counter(s);position:absolute;left:-2.35rem;top:.05rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--green);color:#fff;font-weight:700;font-size:.9rem;display:grid;place-items:center}
+ol.steps strong{display:block}
+.subjects h3{font-size:1.2rem;margin-bottom:.6rem}
+.subjects ul{list-style:none;columns:2}.subjects li{padding:.15rem 0}
+
+table{border-collapse:collapse;width:100%;max-width:640px}
+th,td{text-align:left;padding:1rem .5rem;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-weight:700;color:var(--green-d);white-space:nowrap}
+.note{margin-top:1.2rem;color:var(--muted);max-width:60ch}
+dl.rules{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 3rem}
+dl.rules dt{font-weight:700;color:var(--green-d)}dl.rules dd{color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:1rem 0;max-width:720px}
+summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--green)}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:.6rem;color:var(--muted)}
+
+.more{background:var(--green);color:#fff;border-radius:16px;padding:2.6rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.more h2{color:#fff;margin:0 0 .5rem}.more p{max-width:48ch;color:#E5F3EE}
+.band{padding:0 0 4rem}
+
+.contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:start}
+.info{display:grid;gap:2rem}
+.info div{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem}
+.info svg{width:2.4rem;height:2.4rem;stroke:var(--green);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.info h3{font-size:1.3rem;margin-bottom:.3rem}
+.info a{text-decoration:none;display:block;color:var(--muted)}.info a:hover{color:var(--green-d)}
+.info small{color:var(--muted)}
+form{background:#fff;border-radius:16px;padding:2.2rem;box-shadow:0 10px 30px rgba(10,82,66,.12)}
+form h3{font-size:1.7rem;margin-bottom:1.2rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+label{display:block;font-size:.93rem;color:var(--muted);margin:1rem 0 .35rem}
+label b{color:#C0392B}
+input,select,textarea{width:100%;padding:.8rem .9rem;border:1px solid #CFC8B8;border-radius:8px;font:inherit;color:var(--ink);background:#fff}
+textarea{min-height:140px;resize:vertical}
+form .btn{margin-top:1.4rem}
+.status{margin-top:1rem;font-size:.95rem;min-height:1.4rem}.status.ok{color:var(--green-d)}.status.err{color:#C0392B}
+
+footer{background:var(--dark);color:#B9CBC5;padding:3.2rem 0 2rem;font-size:.95rem}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
+footer h3{font-family:'DM Sans',sans-serif;color:#fff;font-size:1rem;margin-bottom:.7rem}
+footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}footer a:hover{color:#fff}
+.copy{grid-column:1/-1;border-top:1px solid #2B3B37;padding-top:1.2rem;margin-top:.5rem;font-size:.88rem}
+
+@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+  body{font-size:16px}section{padding:3.2rem 0}
+  nav .l{display:none}
+  .cols,.subjects,dl.rules,.contact-grid,.grid4,.f2,footer .wrap{grid-template-columns:1fr;gap:2rem}
+  .f2{gap:0}
+  .hero{padding:3.5rem 0 8rem}
+  .hero::before{width:420px;height:420px;right:-140px;bottom:-200px}
+  .hero::after{width:310px;height:310px;right:-90px;bottom:-150px}
+  .more{padding:2rem 1.5rem}form{padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.png" alt="Logo Haske" onerror="logoFallback(this)">Haske</a>
+    <nav aria-label="Navigation principale">
+      <a class="l" href="#top">Accueil</a>
+      <a class="l" href="#services">Nos services</a>
+      <a class="l" href="#fonctionnement">Fonctionnement</a>
+      <a class="l" href="#tarifs">Tarifs</a>
+      <a class="l" href="#contact">Contact</a>
+      <a data-app href="#">Espace membre</a>
+      <a class="btn btn-green btn-sm" href="#contact">Rejoindre maintenant</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Le soutien scolaire sérieux, à domicile, à Niamey</h1>
+      <p>Haske est une équipe de soutien scolaire. Nous sélectionnons des étudiants, nous les mettons en relation avec votre famille et nous suivons chaque séance.</p>
+      <div class="actions">
+        <a class="btn btn-amber" href="#contact" data-profil="Parent">Faire accompagner mon enfant</a>
+        <a class="btn btn-line" href="#contact" data-profil="Étudiant">Devenir collaborateur</a>
+      </div>
+      <ul class="checks"><li>Profils vérifiés</li><li>Séances suivies</li><li>Paiement sécurisé</li></ul>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Nos services</h2>
+      <p class="lead">Un accompagnement pensé pour les élèves du primaire au lycée.</p>
+      <div class="grid4">
+        <div class="svc"><h3>Soutien à domicile</h3><p>Un étudiant se déplace chez vous, 2 heures par semaine, dans les matières choisies.</p></div>
+        <div class="svc"><h3>Préparation aux examens</h3><p>Annales, méthode et planning de révision pour le BEPC et le Baccalauréat.</p></div>
+        <div class="svc"><h3>Cours de vacances</h3><p>Des révisions intensives pendant les congés, notamment avant les examens.</p></div>
+        <div class="svc"><h3>Suivi pour les familles</h3><p>Chaque séance est déclarée : date, durée, avancement de l'élève.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fonctionnement" class="tint">
+    <div class="wrap">
+      <h2>Comment ça marche</h2>
+      <p class="lead">Chaque candidature passe par un échange direct avec l'équipe Haske. Nous vous répondons personnellement.</p>
+      <div class="cols">
+        <div>
+          <h3>Pour les parents</h3>
+          <ol class="steps">
+            <li><strong>Vous nous écrivez</strong>Avec la classe de votre enfant et les matières souhaitées.</li>
+            <li><strong>Nous choisissons le bon collaborateur</strong>Un étudiant validé par l'équipe, selon les matières et les disponibilités.</li>
+            <li><strong>Les cours commencent</strong>Nous vous envoyons le lien de l'application pour suivre les séances.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Pour les étudiants</h3>
+          <ol class="steps">
+            <li><strong>Vous nous écrivez</strong>Indiquez votre université, votre niveau et les matières que vous pouvez enseigner.</li>
+            <li><strong>Entretien et test pédagogique</strong>Nous vérifions votre pièce d'identité, votre carte étudiante, puis nous évaluons chaque matière.</li>
+            <li><strong>Vous recevez des élèves</strong>Nous vous envoyons le lien de l'application. Vous touchez 80 % de l'abonnement de chaque élève suivi.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="matieres">
+    <div class="wrap">
+      <h2>Les matières proposées</h2>
+      <p class="lead">Selon le programme officiel du Niger.</p>
+      <div class="subjects">
+        <div><h3>Filière scientifique</h3><ul><li>Mathématiques</li><li>Physique-Chimie</li><li>SVT</li><li>Informatique</li></ul></div>
+        <div><h3>Filière littéraire</h3><ul><li>Français</li><li>Anglais</li><li>Histoire-Géo</li><li>Philosophie</li><li>Arabe</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tarifs" class="tint">
+    <div class="wrap">
+      <h2>Tarifs</h2>
+      <p class="lead">Un abonnement mensuel par élève, sans engagement de durée.</p>
+      <table><tbody>
+        <tr><td>1 matière</td><td>10 000 FCFA / mois</td></tr>
+        <tr><td>2 matières choisies à l'inscription</td><td>18 000 FCFA / mois</td></tr>
+        <tr><td>Chaque matière ajoutée ensuite</td><td>+ 10 000 FCFA / mois</td></tr>
+      </tbody></table>
+      <p class="note">Les cours sont fixés à 2 heures par semaine. Le paiement se fait à l'équipe Haske, par Mobile Money ou par transfert, jamais directement à l'étudiant.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Nos engagements</h2>
+      <p class="lead">Confier son enfant à un étudiant demande de la confiance. Voici ce que nous mettons en place.</p>
+      <dl class="rules">
+        <div><dt>Des profils vérifiés</dt><dd>Pièce d'identité, carte étudiante, entretien et test pédagogique avant toute mise en relation.</dd></div>
+        <div><dt>Un suivi de chaque séance</dt><dd>Le collaborateur et la famille déclarent chaque séance : date, durée, avancement de l'élève.</dd></div>
+        <div><dt>Un paiement sécurisé</dt><dd>Tout passe par l'équipe Haske, qui reverse ensuite sa part au collaborateur.</dd></div>
+        <div><dt>Un changement possible</dt><dd>Si le collaborateur ne convient pas, nous en proposons un autre sans frais supplémentaires.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <h2>Questions fréquentes</h2>
+      <details><summary>Comment fonctionne le paiement ?</summary><p>Vous payez l'abonnement mensuel à l'équipe Haske, par Mobile Money ou par transfert. Vous ne payez jamais l'étudiant directement.</p></details>
+      <details><summary>Puis-je arrêter l'abonnement ?</summary><p>Oui. L'abonnement est mensuel et sans engagement de durée. Prévenez l'équipe Haske 15 jours avant la fin du mois en cours.</p></details>
+      <details><summary>Puis-je ajouter des matières plus tard ?</summary><p>Oui, à tout moment : chaque matière supplémentaire est facturée 10 000 FCFA par mois, après validation par l'équipe.</p></details>
+      <details><summary>Que faut-il pour devenir collaborateur ?</summary><p>Être étudiant, présenter une pièce d'identité et une carte étudiante valides, puis réussir un entretien et un test pédagogique dans chaque matière proposée.</p></details>
+    </div>
+  </section>
+
+  <div class="band"><div class="wrap" style="padding-top:4rem">
+    <div class="more">
+      <div><h2>Plus d'infos</h2><p>Rejoignez-nous dès aujourd'hui et laissez-nous vous aider à atteindre vos objectifs scolaires.</p></div>
+      <a class="btn btn-line" href="#contact">Contactez-nous</a>
+    </div>
+  </div></div>
+
+  <section id="contact" class="contact">
+    <div class="wrap contact-grid">
+      <div class="info">
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H8l-4 4z"/></svg>
+          <span><h3>WhatsApp et téléphone</h3>
+            <a data-wa="niger" href="#">+227 92 10 02 15 <small>Niger</small></a>
+            <a data-wa="france" href="#">+33 6 05 85 11 00 <small>France</small></a></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span><h3>E-mail</h3><a data-mail href="#"></a></span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span><h3>Où nous trouver</h3><a>Niamey, Niger<br><small>Cours à domicile dans toute la ville</small></a></span>
+        </div>
+      </div>
+
+      <form id="form" novalidate>
+        <h3>Contactez-nous</h3>
+        <label for="profil">Vous êtes <b>*</b></label>
+        <select id="profil" name="profil" required>
+          <option>Parent</option><option>Étudiant</option><option>Autre</option>
+        </select>
+        <label for="nom">Nom complet <b>*</b></label>
+        <input id="nom" name="nom" autocomplete="name" required>
+        <div class="f2">
+          <div><label for="email">E-mail <b>*</b></label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div><label for="tel">Téléphone <b>*</b></label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+        </div>
+        <label for="message">Message <b>*</b></label>
+        <textarea id="message" name="message" placeholder="Parent : classe de l'enfant et matières souhaitées. Étudiant : université, niveau et matières enseignées." required></textarea>
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
+        <button class="btn btn-green" type="submit" id="send">Envoyer</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><h3>Haske</h3><p>Équipe de soutien scolaire à Niamey, Niger. Des étudiants sélectionnés, un suivi transparent pour les familles.</p></div>
+    <div><h3>Navigation</h3><a href="#services">Nos services</a><a href="#fonctionnement">Fonctionnement</a><a href="#tarifs">Tarifs</a><a data-app href="#">Espace membre</a></div>
+    <div><h3>Contact</h3><a data-wa="niger" href="#">+227 92 10 02 15</a><a data-wa="france" href="#">+33 6 05 85 11 00</a><a data-mail href="#"></a></div>
+    <p class="copy">© Haske — Tous droits réservés</p>
+  </div>
+</footer>
+
+<script>
+/* ═══ À MODIFIER ICI ═══ */
+const CONFIG = {
+  email: 'equipe.haske@gmail.com',
+  whatsappNiger: '22792100215',
+  whatsappFrance: '33605851100',
+  appUrl: 'https://haske-app-v9.vercel.app',  // Espace membre
+  formKey: ''   // clé gratuite de web3forms.com (voir les explications). Vide : le formulaire ouvre l'application e-mail
+};
+/* ═══════════════════════ */
+
+document.querySelectorAll('[data-app]').forEach(a => { a.href = CONFIG.appUrl; });
+document.querySelectorAll('[data-mail]').forEach(a => { a.href = 'mailto:' + CONFIG.email; a.textContent = CONFIG.email; });
+document.querySelectorAll('[data-wa]').forEach(a => {
+  const n = a.dataset.wa === 'niger' ? CONFIG.whatsappNiger : CONFIG.whatsappFrance;
+  a.href = 'https://wa.me/' + n; a.target = '_blank'; a.rel = 'noopener';
+});
+document.querySelectorAll('[data-profil]').forEach(a => a.addEventListener('click', () => { document.getElementById('profil').value = a.dataset.profil; }));
+
+const form = document.getElementById('form'), statut = document.getElementById('status'), bouton = document.getElementById('send');
+const dire = (t, cls) => { statut.textContent = t; statut.className = 'status ' + (cls || ''); };
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  if (form.botcheck.checked) return;
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  const d = Object.fromEntries(new FormData(form));
+  const sujet = 'Haske — message de ' + d.nom + ' (' + d.profil + ')';
+  const texte = 'Profil : ' + d.profil + '\nNom : ' + d.nom + '\nE-mail : ' + d.email + '\nTéléphone : ' + d.tel + '\n\n' + d.message;
+
+  if (!CONFIG.formKey) {
+    location.href = 'mailto:' + CONFIG.email + '?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(texte);
+    dire('Votre application e-mail s\'ouvre : envoyez le message pour terminer.', 'ok');
+    return;
+  }
+  bouton.disabled = true; dire('Envoi en cours…');
+  try {
+    const r = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ access_key: CONFIG.formKey, subject: sujet, from_name: 'Site Haske', name: d.nom, email: d.email, phone: d.tel, profil: d.profil, message: d.message })
+    });
+    const j = await r.json();
+    if (!j.success) throw new Error('refus');
+    form.reset(); dire('Merci, votre message est bien envoyé. Nous vous répondons rapidement.', 'ok');
+  } catch (err) {
+    dire('L\'envoi a échoué. Écrivez-nous sur WhatsApp ou à ' + CONFIG.email + '.', 'err');
+  } finally { bouton.disabled = false; }
+});
+</script>
+</body>
+</html>
