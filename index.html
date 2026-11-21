@@ -126,7 +126,6 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
       <a class="l" href="#services">Nos services</a>
       <a class="l" href="#fonctionnement">Fonctionnement</a>
       <a class="l" href="#contact">Contact</a>
-      <a data-app href="#">Espace membre</a>
       <a class="btn btn-green btn-sm" href="#contact">Rejoindre maintenant</a>
     </nav>
   </div>
@@ -136,7 +135,7 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
   <section class="hero">
     <div class="wrap">
       <h1>Le soutien scolaire sérieux, à domicile, au Niger</h1>
-      <p>Haske est une équipe de soutien scolaire. Nous sélectionnons des étudiants, nous les mettons en relation avec votre famille et nous suivons chaque séance.</p>
+      <p>Haske est une équipe de soutien scolaire. Nous sélectionnons des étudiants, nous les mettons en relation avec des familles et nous suivons chaque séance.</p>
       <div class="actions">
         <a class="btn btn-amber" href="#contact" data-profil="Parent">Faire accompagner mon enfant</a>
         <a class="btn btn-line" href="#contact" data-profil="Étudiant">Devenir collaborateur</a>
@@ -264,7 +263,7 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
 <footer>
   <div class="wrap">
     <div><h3>Haske</h3><p>Équipe de soutien scolaire au Niger. Des étudiants sélectionnés, un suivi transparent pour les familles.</p></div>
-    <div><h3>Navigation</h3><a href="#services">Nos services</a><a href="#fonctionnement">Fonctionnement</a><a data-app href="#">Espace membre</a></div>
+    <div><h3>Navigation</h3><a href="#services">Nos services</a><a href="#fonctionnement">Fonctionnement</a></div>
     <div><h3>Contact</h3><a data-wa="niger" href="#">+227 92 10 02 15</a><a data-wa="france" href="#">+33 6 05 85 11 00</a><a data-mail href="#"></a></div>
     <p class="copy">© Haske — Tous droits réservés</p>
   </div>
@@ -276,12 +275,10 @@ const CONFIG = {
   email: 'equipe.haske@gmail.com',
   whatsappNiger: '22792100215',
   whatsappFrance: '33605851100',
-  appUrl: 'https://haske-app-v9.vercel.app',  // Espace membre
   formKey: ''   // clé gratuite de web3forms.com (voir les explications). Vide : le formulaire ouvre l'application e-mail
 };
 /* ═══════════════════════ */
 
-document.querySelectorAll('[data-app]').forEach(a => { a.href = CONFIG.appUrl; });
 document.querySelectorAll('[data-mail]').forEach(a => { a.href = 'mailto:' + CONFIG.email; a.textContent = CONFIG.email; });
 document.querySelectorAll('[data-wa]').forEach(a => {
   const n = a.dataset.wa === 'niger' ? CONFIG.whatsappNiger : CONFIG.whatsappFrance;
