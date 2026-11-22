@@ -5,114 +5,141 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Haske — Équipe de soutien scolaire au Niger</title>
 <meta name="description" content="Haske sélectionne des étudiants pour accompagner les élèves à domicile, avec un suivi transparent pour les familles. Écrivez-nous pour inscrire votre enfant ou devenir collaborateur.">
-<meta name="theme-color" content="#0F6E56">
+<meta name="theme-color" content="#161513">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Hanken+Grotesk:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <script>
 /* Si logo.png est absent, un logo de secours (redessiné) s'affiche à sa place */
 const LOGO_SVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><rect width="400" height="400" fill="#FAF3E7"/><circle cx="200" cy="190" r="130" fill="#E8701A"/><circle cx="200" cy="190" r="95" fill="#F5A623"/><path d="M185 290l-5 50h15l5-40 5 40h15l-5-50z" fill="#1A1A18"/><ellipse cx="200" cy="255" rx="22" ry="38" fill="#1A1A18"/><circle cx="200" cy="205" r="16" fill="#1A1A18"/><path d="M183 230Q165 210 158 175M217 230Q235 205 242 165" stroke="#1A1A18" stroke-width="11" fill="none" stroke-linecap="round"/><rect x="238" y="120" width="8" height="48" rx="3" fill="#1A1A18" transform="rotate(8 242 144)"/><path d="M245 95C245 95 232 112 232 126c0 12 6 20 15 20s15-8 15-20c0-14-13-31-17-31z" fill="#0F6E56"/><path d="M60 320v-30q0-8 10-10l125 15v35L70 318q-10-1-10 2zM340 320v-30q0-8-10-10l-125 15v35l125-12q10-1 10 2z" fill="#fff" stroke="#0F6E56" stroke-width="3"/><path d="M40 345Q120 325 200 345T360 345" stroke="#0F6E56" stroke-width="6" fill="none" stroke-linecap="round"/></svg>';
 function logoFallback(img){ img.onerror = null; img.src = 'data:image/svg+xml;utf8,' + encodeURIComponent(LOGO_SVG); }
 </script>
 <style>
-:root{--green:#0F6E56;--green-d:#0A5242;--green-l:#E1F5EE;--amber:#EF9F27;--amber-l:#FBEBCF;--cream:#FAF3E7;--ink:#1A1A18;--muted:#5C5B55;--line:#DDD5C4;--dark:#16221F}
+:root{--ink:#161513;--paper:#F2F1EC;--paper2:#E8E6DD;--line:#D2CFC3;--orange:#E8701A;--green:#0F6E56;--blue:#23408E;--muted:#5E5B52}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:5rem}
-body{font-family:'DM Sans',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.6;font-size:17px}
-h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:'Young Serif',Georgia,serif;font-weight:400;line-height:1.12}
 a{color:inherit}
-:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
-section{padding:4.5rem 0}
-h2{font-size:clamp(1.7rem,4vw,2.3rem);color:var(--green-d);margin-bottom:.6rem}
-.lead{color:var(--muted);max-width:60ch;margin-bottom:2.2rem}
-.tint{background:var(--cream)}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+section{padding:5rem 0}
+h2{font-size:clamp(1.9rem,4.2vw,2.8rem);margin-bottom:.8rem}
+.lead{color:var(--muted);max-width:42ch}
+.tint{background:var(--paper2)}
 
-header{position:sticky;top:0;z-index:10;background:rgba(250,243,231,.97);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;gap:1.4rem;min-height:4.2rem}
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:'Fraunces',serif;font-weight:700;font-size:1.45rem;color:var(--green-d)}
-.brand img{width:44px;height:44px;border-radius:10px}
-nav{display:flex;gap:1.4rem;margin-left:auto;font-size:.95rem;align-items:center}
-nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--green-d)}
-.btn{display:inline-block;padding:.8rem 1.5rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:1rem;cursor:pointer;font-family:inherit}
-.btn-amber{background:var(--amber);color:var(--ink)}.btn-amber:hover{background:#F5B04A}
-.btn-line{border-color:#fff;color:#fff;background:transparent}.btn-line:hover{background:rgba(255,255,255,.14)}
-.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-d)}
-.btn-outline{border-color:var(--green);color:var(--green-d);background:transparent}.btn-outline:hover{background:var(--green-l)}
-.btn-sm{padding:.55rem 1.2rem;font-size:.92rem}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:4px;font:inherit;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.btn-or{background:var(--orange);color:var(--ink)}.btn-or:hover{background:#F08A3E}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}.btn-ghost:hover{border-color:#fff}
+.btn-ink{background:var(--ink);color:#fff}.btn-ink:hover{background:#2E2B27}
+.btn-sm{padding:.55rem 1.1rem;font-size:.93rem}
 
-.hero{background:var(--green);color:#fff;position:relative;overflow:hidden;padding:5.5rem 0 6rem}
-.hero::before,.hero::after{content:"";position:absolute;border-radius:50%}
-.hero::before{width:640px;height:640px;background:#E8701A;right:-120px;bottom:-260px}
-.hero::after{width:470px;height:470px;background:var(--amber);right:-35px;bottom:-190px}
-.hero .wrap{position:relative;z-index:1}
-.hero h1{font-size:clamp(2.2rem,6vw,3.7rem);max-width:15ch}
-.hero p{max-width:46ch;margin:1.3rem 0 2rem;font-size:1.15rem;color:#E5F3EE}
-.hero .actions{display:flex;flex-wrap:wrap;gap:.8rem}
-.checks{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:2.2rem;list-style:none;font-size:.98rem}
-.checks li::before{content:"\2713";color:var(--amber);font-weight:700;margin-right:.45rem}
+header{position:sticky;top:0;z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;gap:1.6rem;min-height:4.2rem}
+.brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;font-family:'Young Serif',serif;font-size:1.5rem}
+.brand img{width:42px;height:42px;border-radius:6px}
+nav{margin-left:auto;display:flex;align-items:center;gap:1.7rem;font-size:.95rem}
+nav a:not(.btn){text-decoration:none;color:var(--muted)}nav a:not(.btn):hover{color:var(--ink)}
 
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.svc{background:#fff;border:1px solid var(--line);border-top:4px solid var(--amber);border-radius:12px;padding:1.5rem}
-.svc h3{font-size:1.15rem;margin-bottom:.5rem;color:var(--green-d)}
-.svc p{color:var(--muted);font-size:.97rem}
+.hero{background-color:var(--ink);background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px;color:#fff;position:relative;padding:6rem 0 6.5rem;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:max(.6rem,calc((100vw - 1100px)/2 - 1.1rem));width:2px;background:rgba(232,112,26,.6)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:3rem;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.4rem,5.6vw,4rem);max-width:14ch}
+.hero p{max-width:44ch;margin:1.4rem 0 2rem;font-size:1.12rem;color:#D8DBD6}
+.actions{display:flex;flex-wrap:wrap;gap:.8rem}
+.checks{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:2.2rem;list-style:none;font-size:.97rem;color:#D8DBD6}
+.checks li::before{content:"\2713";color:var(--orange);font-weight:700;margin-right:.45rem}
 
-.cols,.subjects{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.cols h3{font-size:1.35rem;margin-bottom:1rem}
-ol.steps{list-style:none;counter-reset:s;border-left:3px solid var(--amber);padding-left:1.4rem}
-ol.steps li{counter-increment:s;position:relative;margin-bottom:1.1rem}
-ol.steps li::before{content:counter(s);position:absolute;left:-2.35rem;top:.05rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--green);color:#fff;font-weight:700;font-size:.9rem;display:grid;place-items:center}
-ol.steps strong{display:block}
-.subjects h3{font-size:1.2rem;margin-bottom:.6rem}
-.subjects ul{list-style:none;columns:2}.subjects li{padding:.15rem 0}
+.label{position:relative;background:#FBFAF6;color:var(--ink);padding:2rem 1.8rem 1.7rem;border-radius:3px;transform:rotate(-3deg);box-shadow:0 18px 40px rgba(0,0,0,.5);max-width:340px;justify-self:center;width:100%}
+.label::before{content:"";position:absolute;top:-14px;left:50%;width:90px;height:28px;margin-left:-45px;background:rgba(224,196,140,.75);transform:rotate(2deg)}
+.lt{font-family:'Young Serif',serif;font-size:1.35rem;text-align:center;border-bottom:2px solid var(--ink);padding-bottom:.6rem;margin-bottom:.6rem}
+.lr{display:flex;align-items:baseline;gap:.7rem;border-bottom:1px solid #BDB9AB;padding:.6rem 0;font-size:.88rem;color:var(--muted)}
+.lr em{font-family:'Caveat',cursive;font-style:normal;font-size:1.5rem;line-height:1.1;color:var(--blue)}
+.stamp{position:absolute;right:-16px;bottom:-22px;width:88px;height:88px;border:3px solid var(--orange);border-radius:50%;color:var(--orange);display:grid;place-items:center;font-family:'Young Serif',serif;font-size:1.15rem;transform:rotate(14deg)}
 
-dl.rules{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem 3rem}
-dl.rules dt{font-weight:700;color:var(--green-d)}dl.rules dd{color:var(--muted)}
-details{border-bottom:1px solid var(--line);padding:1rem 0;max-width:720px}
+.ticker{background:var(--paper2);border-bottom:1px solid var(--line);overflow:hidden;padding:1.1rem 0}
+.track{display:flex;width:max-content;animation:slide 40s linear infinite}
+.track ul{display:flex;list-style:none;flex-shrink:0}
+.track li{font-family:'Young Serif',serif;font-size:1.45rem;padding-right:2.2rem;display:flex;align-items:center;gap:2.2rem;white-space:nowrap}
+.track li::after{content:"";width:7px;height:7px;background:var(--orange);transform:rotate(45deg)}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.track{animation:none;width:auto}.track ul{flex-wrap:wrap}.track ul+ul{display:none}}
+
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start}
+.split .head{position:sticky;top:6rem}
+.index{list-style:none;border-top:2px solid var(--ink)}
+.index li{display:grid;grid-template-columns:4rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:1px solid var(--line)}
+.index .n{font-family:'Young Serif',serif;font-size:2rem;color:#B9B5A7;transition:color .2s}
+.index li:hover .n{color:var(--orange)}
+.index h3{font-size:1.4rem;margin-bottom:.3rem}
+.index p{color:var(--muted);max-width:48ch}
+
+.tabs{display:inline-flex;border:2px solid var(--ink);border-radius:4px;margin:1.5rem 0 2.4rem}
+.tabs button{font:inherit;font-weight:700;padding:.7rem 1.4rem;background:transparent;border:0;cursor:pointer;color:var(--ink)}
+.tabs button[aria-selected=true]{background:var(--ink);color:#fff}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.steps[hidden]{display:none}
+.steps li{padding:1.6rem 1.6rem 0 0}
+.steps li+li{padding-left:1.6rem;border-left:1px solid var(--line)}
+.steps .n{font-family:'Young Serif',serif;font-size:3.4rem;color:#BDB9AB;line-height:1;display:block;margin-bottom:.6rem}
+.steps strong{display:block;font-size:1.15rem;margin-bottom:.3rem}
+.steps span.t{color:var(--muted)}
+
+.dark{background:var(--ink);color:#fff}
+.statement{font-family:'Young Serif',serif;font-size:clamp(2rem,5.2vw,3.6rem);max-width:17ch;line-height:1.1;margin-bottom:3.5rem}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.35)}
+.rules div{padding:1.4rem 1.4rem 0 0}
+.rules div+div{padding-left:1.4rem;border-left:1px solid rgba(255,255,255,.18)}
+.rules dt{font-weight:700;margin-bottom:.4rem}
+.rules dd{color:#C9CCC6;font-size:.97rem}
+
+details{border-bottom:1px solid var(--line);padding:1.1rem 0;max-width:760px}
 summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:1rem}
-summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--green)}
+summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--orange)}
 details[open] summary::after{content:"\2212"}
 details p{margin-top:.6rem;color:var(--muted)}
 
-.more{background:var(--green);color:#fff;border-radius:16px;padding:2.6rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.more h2{color:#fff;margin:0 0 .5rem}.more p{max-width:48ch;color:#E5F3EE}
-.band{padding:0 0 4rem}
+.more{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:2.6rem 0}
+.more h2{margin:0 0 .4rem}.more p{color:var(--muted);max-width:46ch}
 
-.contact{background:var(--cream)}
-.contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:3rem;align-items:start}
-.info{display:grid;gap:2rem}
-.info div{display:grid;grid-template-columns:2.6rem 1fr;gap:1rem}
-.info svg{width:2.4rem;height:2.4rem;stroke:var(--green);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.contact{background-image:linear-gradient(rgba(0,0,0,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(0,0,0,.045) 1px,transparent 1px);background-size:34px 34px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:start}
+.info{display:grid;gap:2rem;padding-top:1rem}
+.info div{display:grid;grid-template-columns:2.4rem 1fr;gap:1rem}
+.info svg{width:2.2rem;height:2.2rem;stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .info h3{font-size:1.3rem;margin-bottom:.3rem}
-.info a{text-decoration:none;display:block;color:var(--muted)}.info a:hover{color:var(--green-d)}
+.info a{text-decoration:none;display:block;color:var(--muted)}.info a:hover{color:var(--ink)}
 .info small{color:var(--muted)}
-form{background:#fff;border-radius:16px;padding:2.2rem;box-shadow:0 10px 30px rgba(10,82,66,.12)}
-form h3{font-size:1.7rem;margin-bottom:1.2rem}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-label{display:block;font-size:.93rem;color:var(--muted);margin:1rem 0 .35rem}
-label b{color:#C0392B}
-input,select,textarea{width:100%;padding:.8rem .9rem;border:1px solid #CFC8B8;border-radius:8px;font:inherit;color:var(--ink);background:#fff}
-textarea{min-height:140px;resize:vertical}
-form .btn{margin-top:1.4rem}
-.status{margin-top:1rem;font-size:.95rem;min-height:1.4rem}.status.ok{color:var(--green-d)}.status.err{color:#C0392B}
+form{background:#fff;border:1px solid var(--line);border-radius:4px;padding:2.2rem;box-shadow:0 24px 40px -26px rgba(0,0,0,.35)}
+form h3{font-size:1.8rem;margin-bottom:.6rem}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+label{display:block;font-size:.9rem;color:var(--muted);margin:1.2rem 0 .1rem}
+label b{color:var(--orange)}
+input,select,textarea{width:100%;padding:.6rem 0;border:0;border-bottom:1.5px solid #BDB9AB;border-radius:0;font:inherit;color:var(--ink);background:transparent}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--ink)}
+textarea{min-height:120px;resize:vertical}
+form .btn{margin-top:1.6rem}
+.status{margin-top:1rem;font-size:.95rem;min-height:1.4rem}.status.ok{color:var(--green)}.status.err{color:#B3261E}
 
-footer{background:var(--dark);color:#B9CBC5;padding:3.2rem 0 2rem;font-size:.95rem}
+footer{background:var(--ink);color:#B7B9B3;padding:3.2rem 0 2rem;font-size:.95rem}
 footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem}
-footer h3{font-family:'DM Sans',sans-serif;color:#fff;font-size:1rem;margin-bottom:.7rem}
-footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}footer a:hover{color:#fff}
-.copy{grid-column:1/-1;border-top:1px solid #2B3B37;padding-top:1.2rem;margin-top:.5rem;font-size:.88rem}
+footer h3{font-family:'Hanken Grotesk',sans-serif;font-weight:700;color:#fff;font-size:1rem;margin-bottom:.7rem}
+footer a{display:block;color:#B7B9B3;text-decoration:none;padding:.15rem 0}footer a:hover{color:#fff}
+.copy{grid-column:1/-1;border-top:1px solid #34322E;padding-top:1.2rem;margin-top:.5rem;font-size:.88rem}
 
-@media(max-width:900px){.grid4{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.rules{grid-template-columns:1fr 1fr}.rules div:nth-child(3){padding-left:0;border-left:0}.rules div:nth-child(n+3){margin-top:1.4rem}}
 @media(max-width:760px){
-  body{font-size:16px}section{padding:3.2rem 0}
-  nav .l{display:none}
-  .cols,.subjects,dl.rules,.contact-grid,.grid4,.f2,footer .wrap{grid-template-columns:1fr;gap:2rem}
-  .f2{gap:0}
-  .hero{padding:3.5rem 0 8rem}
-  .hero::before{width:420px;height:420px;right:-140px;bottom:-200px}
-  .hero::after{width:310px;height:310px;right:-90px;bottom:-150px}
-  .more{padding:2rem 1.5rem}form{padding:1.5rem}
+  body{font-size:16px}section{padding:3.4rem 0}
+  nav a:not(.btn){display:none}
+  .hero{padding:3.6rem 0 4.5rem}
+  .hero .wrap,.split,.contact-grid,footer .wrap,.f2{grid-template-columns:1fr}
+  .hero .wrap{gap:3.2rem}.split,.contact-grid{gap:2rem}
+  .split .head{position:static}
+  .steps,.rules{grid-template-columns:1fr}
+  .steps li,.steps li+li{padding:1.4rem 0 0;border-left:0}
+  .rules div,.rules div+div,.rules div:nth-child(3){padding:1.2rem 0 0;border-left:0;margin-top:0}
+  .f2{gap:0}form{padding:1.5rem}
 }
 </style>
 </head>
@@ -122,11 +149,10 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
   <div class="wrap">
     <a class="brand" href="#top"><img src="logo.png" alt="Logo Haske" onerror="logoFallback(this)">Haske</a>
     <nav aria-label="Navigation principale">
-      <a class="l" href="#top">Accueil</a>
-      <a class="l" href="#services">Nos services</a>
-      <a class="l" href="#fonctionnement">Fonctionnement</a>
-      <a class="l" href="#contact">Contact</a>
-      <a class="btn btn-green btn-sm" href="#contact">Rejoindre maintenant</a>
+      <a href="#services">Nos services</a>
+      <a href="#fonctionnement">Fonctionnement</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-ink btn-sm" href="#contact">Rejoindre maintenant</a>
     </nav>
   </div>
 </header>
@@ -134,26 +160,44 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <h1>Le soutien scolaire sérieux, à domicile, au Niger</h1>
-      <p>Haske est une équipe de soutien scolaire. Nous sélectionnons des étudiants, nous les mettons en relation avec des familles et nous suivons chaque séance.</p>
-      <div class="actions">
-        <a class="btn btn-amber" href="#contact" data-profil="Parent">Faire accompagner mon enfant</a>
-        <a class="btn btn-line" href="#contact" data-profil="Étudiant">Devenir collaborateur</a>
+      <div>
+        <h1>Le soutien scolaire sérieux, à domicile, au Niger</h1>
+        <p>Haske est une équipe de soutien scolaire. Nous sélectionnons des étudiants, nous les mettons en relation avec des familles et nous suivons chaque séance.</p>
+        <div class="actions">
+          <a class="btn btn-or" href="#contact" data-profil="Parent">Faire accompagner mon enfant</a>
+          <a class="btn btn-ghost" href="#contact" data-profil="Étudiant">Devenir collaborateur</a>
+        </div>
+        <ul class="checks"><li>Profils vérifiés</li><li>Séances suivies</li><li>Cours à domicile</li></ul>
       </div>
-      <ul class="checks"><li>Profils vérifiés</li><li>Séances suivies</li><li>Cours à domicile</li></ul>
+      <div class="label" aria-hidden="true">
+        <div class="lt">Cahier de soutien</div>
+        <div class="lr">Élève <em>votre enfant</em></div>
+        <div class="lr">Classe <em>du CE1 à la Terminale</em></div>
+        <div class="lr">Matière <em>au choix</em></div>
+        <div class="stamp">Haske</div>
+      </div>
     </div>
   </section>
 
+  <div class="ticker" aria-label="Matières proposées : Mathématiques, Physique-Chimie, SVT, Informatique, Français, Anglais, Histoire-Géo, Philosophie, Arabe">
+    <div class="track">
+      <ul aria-hidden="true"><li>Mathématiques</li><li>Physique-Chimie</li><li>SVT</li><li>Informatique</li><li>Français</li><li>Anglais</li><li>Histoire-Géo</li><li>Philosophie</li><li>Arabe</li></ul>
+      <ul aria-hidden="true"><li>Mathématiques</li><li>Physique-Chimie</li><li>SVT</li><li>Informatique</li><li>Français</li><li>Anglais</li><li>Histoire-Géo</li><li>Philosophie</li><li>Arabe</li></ul>
+    </div>
+  </div>
+
   <section id="services">
-    <div class="wrap">
-      <h2>Nos services</h2>
-      <p class="lead">Un accompagnement pensé pour les élèves du primaire au lycée.</p>
-      <div class="grid4">
-        <div class="svc"><h3>Soutien à domicile</h3><p>Un étudiant se déplace chez vous, pour accompagner votre enfant par semaine à votre rythme, dans les matières choisies.</p></div>
-        <div class="svc"><h3>Préparation aux examens</h3><p>Annales, méthode et planning de révision pour le BEPC et le Baccalauréat.</p></div>
-        <div class="svc"><h3>Cours de vacances</h3><p>Des révisions intensives pendant les congés, notamment avant les examens.</p></div>
-        <div class="svc"><h3>Suivi pour les familles</h3><p>Chaque séance est déclarée : date, durée, avancement de l'élève.</p></div>
+    <div class="wrap split">
+      <div class="head">
+        <h2>Nos services</h2>
+        <p class="lead">Un accompagnement pensé pour les élèves du primaire au lycée.</p>
       </div>
+      <ol class="index">
+        <li><span class="n">01</span><div><h3>Soutien à domicile</h3><p>Un étudiant se déplace chez vous, pour accompagner votre enfant par semaine à votre rythme, dans les matières choisies.</p></div></li>
+        <li><span class="n">02</span><div><h3>Préparation aux examens</h3><p>Annales, méthode et planning de révision pour le BEPC et le Baccalauréat.</p></div></li>
+        <li><span class="n">03</span><div><h3>Cours de vacances</h3><p>Des révisions intensives pendant les congés, notamment avant les examens.</p></div></li>
+        <li><span class="n">04</span><div><h3>Suivi pour les familles</h3><p>Chaque séance est déclarée : date, durée, avancement de l'élève.</p></div></li>
+      </ol>
     </div>
   </section>
 
@@ -161,42 +205,26 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
     <div class="wrap">
       <h2>Comment ça marche</h2>
       <p class="lead">Chaque candidature passe par un échange direct avec l'équipe Haske. Nous vous répondons personnellement.</p>
-      <div class="cols">
-        <div>
-          <h3>Pour les parents</h3>
-          <ol class="steps">
-            <li><strong>Vous nous écrivez</strong>Avec la classe de votre enfant et les matières souhaitées.</li>
-            <li><strong>Nous choisissons le bon collaborateur</strong>Un étudiant validé par l'équipe, selon les matières et les disponibilités.</li>
-            <li><strong>Les cours commencent</strong>Nous vous envoyons le lien de l'application pour suivre les séances.</li>
-          </ol>
-        </div>
-        <div>
-          <h3>Pour les étudiants</h3>
-          <ol class="steps">
-            <li><strong>Vous nous écrivez</strong>Indiquez votre université, votre niveau et les matières que vous pouvez enseigner.</li>
-            <li><strong>Entretien et test pédagogique</strong>Nous vérifions votre pièce d'identité, votre carte étudiante, puis nous évaluons chaque matière.</li>
-            <li><strong>Vous recevez des élèves</strong>Nous vous envoyons le lien de l'application et nous vous mettons en relation avec des familles.</li>
-          </ol>
-        </div>
+      <div class="tabs" role="tablist" aria-label="Choisir votre parcours">
+        <button role="tab" id="t-parent" aria-selected="true" aria-controls="p-parent">Je suis parent</button>
+        <button role="tab" id="t-etu" aria-selected="false" aria-controls="p-etu">Je suis étudiant</button>
       </div>
+      <ol class="steps" id="p-parent" role="tabpanel" aria-labelledby="t-parent">
+        <li><span class="n">1</span><strong>Vous nous écrivez</strong><span class="t">Avec la classe de votre enfant et les matières souhaitées.</span></li>
+        <li><span class="n">2</span><strong>Nous choisissons le bon collaborateur</strong><span class="t">Un étudiant validé par l'équipe, selon les matières et les disponibilités.</span></li>
+        <li><span class="n">3</span><strong>Les cours commencent</strong><span class="t">Nous vous envoyons le lien de l'application pour suivre les séances.</span></li>
+      </ol>
+      <ol class="steps" id="p-etu" role="tabpanel" aria-labelledby="t-etu" hidden>
+        <li><span class="n">1</span><strong>Vous nous écrivez</strong><span class="t">Indiquez votre université, votre niveau et les matières que vous pouvez enseigner.</span></li>
+        <li><span class="n">2</span><strong>Entretien et test pédagogique</strong><span class="t">Nous vérifions votre pièce d'identité, votre carte étudiante, puis nous évaluons chaque matière.</span></li>
+        <li><span class="n">3</span><strong>Vous recevez des élèves</strong><span class="t">Nous vous envoyons le lien de l'application et nous vous mettons en relation avec des familles.</span></li>
+      </ol>
     </div>
   </section>
 
-  <section id="matieres">
+  <section class="dark">
     <div class="wrap">
-      <h2>Les matières proposées</h2>
-      <p class="lead">Selon le programme officiel du Niger.</p>
-      <div class="subjects">
-        <div><h3>Filière scientifique</h3><ul><li>Mathématiques</li><li>Physique-Chimie</li><li>SVT</li><li>Informatique</li></ul></div>
-        <div><h3>Filière littéraire</h3><ul><li>Français</li><li>Anglais</li><li>Histoire-Géo</li><li>Philosophie</li><li>Arabe</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="tint">
-    <div class="wrap">
-      <h2>Nos engagements</h2>
-      <p class="lead">Confier son enfant à un étudiant demande de la confiance. Voici ce que nous mettons en place.</p>
+      <p class="statement">Un élève ne réussit pas seul.</p>
       <dl class="rules">
         <div><dt>Des profils vérifiés</dt><dd>Pièce d'identité, carte étudiante, entretien et test pédagogique avant toute mise en relation.</dd></div>
         <div><dt>Un suivi de chaque séance</dt><dd>Le collaborateur et la famille déclarent chaque séance : date, durée, avancement de l'élève.</dd></div>
@@ -216,12 +244,12 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
     </div>
   </section>
 
-  <div class="band"><div class="wrap" style="padding-top:4rem">
+  <div class="wrap">
     <div class="more">
       <div><h2>Plus d'infos</h2><p>Rejoignez-nous dès aujourd'hui et laissez-nous vous aider à atteindre vos objectifs scolaires.</p></div>
-      <a class="btn btn-line" href="#contact">Contactez-nous</a>
+      <a class="btn btn-ink" href="#contact">Contactez-nous</a>
     </div>
-  </div></div>
+  </div>
 
   <section id="contact" class="contact">
     <div class="wrap contact-grid">
@@ -253,7 +281,7 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
         <label for="message">Message <b>*</b></label>
         <textarea id="message" name="message" placeholder="Parent : classe de l'enfant et matières souhaitées. Étudiant : université, niveau et matières enseignées." required></textarea>
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
-        <button class="btn btn-green" type="submit" id="send">Envoyer</button>
+        <button class="btn btn-ink" type="submit" id="send">Envoyer</button>
         <p class="status" id="status" role="status" aria-live="polite"></p>
       </form>
     </div>
@@ -263,7 +291,7 @@ footer a{display:block;color:#B9CBC5;text-decoration:none;padding:.15rem 0}foote
 <footer>
   <div class="wrap">
     <div><h3>Haske</h3><p>Équipe de soutien scolaire au Niger. Des étudiants sélectionnés, un suivi transparent pour les familles.</p></div>
-    <div><h3>Navigation</h3><a href="#services">Nos services</a><a href="#fonctionnement">Fonctionnement</a></div>
+    <div><h3>Navigation</h3><a href="#services">Nos services</a><a href="#fonctionnement">Fonctionnement</a><a href="#contact">Contact</a></div>
     <div><h3>Contact</h3><a data-wa="niger" href="#">+227 92 10 02 15</a><a data-wa="france" href="#">+33 6 05 85 11 00</a><a data-mail href="#"></a></div>
     <p class="copy">© Haske — Tous droits réservés</p>
   </div>
@@ -275,7 +303,7 @@ const CONFIG = {
   email: 'equipe.haske@gmail.com',
   whatsappNiger: '22792100215',
   whatsappFrance: '33605851100',
-  formKey: ''   // clé gratuite de web3forms.com (voir les explications). Vide : le formulaire ouvre l'application e-mail
+  formKey: ''   // clé gratuite de web3forms.com. Vide : le formulaire ouvre l'application e-mail
 };
 /* ═══════════════════════ */
 
@@ -285,6 +313,13 @@ document.querySelectorAll('[data-wa]').forEach(a => {
   a.href = 'https://wa.me/' + n; a.target = '_blank'; a.rel = 'noopener';
 });
 document.querySelectorAll('[data-profil]').forEach(a => a.addEventListener('click', () => { document.getElementById('profil').value = a.dataset.profil; }));
+
+const tabs = [...document.querySelectorAll('.tabs button')];
+tabs.forEach(b => b.addEventListener('click', () => tabs.forEach(x => {
+  const on = x === b;
+  x.setAttribute('aria-selected', on);
+  document.getElementById(x.getAttribute('aria-controls')).hidden = !on;
+})));
 
 const form = document.getElementById('form'), statut = document.getElementById('status'), bouton = document.getElementById('send');
 const dire = (t, cls) => { statut.textContent = t; statut.className = 'status ' + (cls || ''); };
